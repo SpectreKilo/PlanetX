@@ -27,7 +27,11 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
+<<<<<<< HEAD
     "express-session": "^1.17.1",
+=======
+    "express-session": "^1.17.3",
+>>>>>>> 05b14c2ac7ae941ed98795083c8ae50d7ef99bab
     "find-config": "^1.0.0",
     "fs": "^0.0.1-security",
     "handlebars": "^4.7.7",
