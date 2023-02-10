@@ -13,15 +13,19 @@
     <header>
  <nav class="nav-extended">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo">Welcome to Planet X</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
     <div class="nav-content">
       <ul class="tabs tabs-transparent">
-        <li class="tab"><a href="#test1">Test 1</a></li>
-        <li class="tab"><a class="active" href="#test2">Test 2</a></li>
-        <li class="tab"><a href="#test3">Disabled Tab</a></li>
-        <li class="tab"><a href="#test4">Test 4</a></li>
+        <li class="tab"><a href="#universe">Homepage</a></li>
+        {{#if loggedIn}}
+        <li class="tab"><a class="active" href="#mothership">Mothership</a></li>
+        <li class="tab"><a href="#test4">Warp Speed</a></li>
+        <li class="tab"><a href="#login">Log Out</a></li>
+        {{else}}
+  <li class="tab"><a href="#login">Login</a></li>
+        {{/if}}
       </ul>
     </div>
   </nav>
@@ -31,5 +35,8 @@
         </main>
 
      <script type="text/javascript" src="js/materialize.min.js"></script>
+     {{#if loggedIn}}
+     <script src="/js/logout.js"></script>
+     {{/if}}
 </body>
 </html>
