@@ -20,9 +20,16 @@ BlogPost.belongsTo(User, {
 })
 
 User.hasMany(BlogPost, {
-    foreignKey: 'user_id',
+    foreignKey: "user_id",
     onDelete: 'CASCADE'
 })
 
+Genre.hasMany(SubGenre, {
+    foreignKey: "",
+})
 
-module.exports = { User, BlogPost, Comment };
+SubGenre.belongsTo(Genre, {
+    foreignKey: "",
+})
+
+module.exports = { User, BlogPost, Comment, Genre, SubGenre, };
