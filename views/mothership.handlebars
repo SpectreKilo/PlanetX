@@ -1,0 +1,21 @@
+<div class="moon-container">
+<h3>Discovered Moons:</h3>
+{{#if blogposts.length}}
+{{#each blogposts as |moon|}}
+  {{> moon_post}}
+{{/each}}
+{{else}}
+<p>Go Out And Explore!</p>
+{{/if}}
+</div>
+
+<div class="flag-container">
+    <h3>Flags Planted:</h3>
+    {{#if comment.length}}
+{{#each comment as |flag|}}
+  {{> flagForm}}
+{{/each}}
+{{else}}
+<p>Plant Your Flag!</p>
+{{/if}}
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planet X</title>
+</head>
+<body>
+    <header>
+ <nav class="nav-extended">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Welcome to Planet X</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+    <div class="nav-content">
+      <ul class="tabs tabs-transparent">
+        <li class="tab"><a href="#universe">Homepage</a></li>
+        {{#if loggedIn}}
+        <li class="tab"><a class="active" href="#mothership">Mothership</a></li>
+        <li class="tab"><a href="#test4">Warp Speed</a></li>
+        <li class="tab"><a href="#login">Log Out</a></li>
+        {{else}}
+  <li class="tab"><a href="#login">Login</a></li>
+        {{/if}}
+      </ul>
+    </div>
+  </nav>
+  </header>
+        <main>
+            {{{ body }}}
+        </main>
+
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+     {{#if loggedIn}}
+     <script src="/js/logout.js"></script>
+     {{/if}}
+</body>
+</html>
