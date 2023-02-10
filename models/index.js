@@ -1,6 +1,8 @@
 const User = require("./User");
 const BlogPost = require("./BlogPost");
 const Comment = require("./Comment");
+const Genre = require("./Genre");
+const SubGenre = require("./SubGenre");
 
 Comment.belongsTo(BlogPost, {
     foreignKey: "topic_id",
