@@ -3,7 +3,8 @@ const { User } = require('../../models');
 
 
 //SIGNUP routes request
-router.post('/signup', async (req, res) => {
+router.post('/', async (req, res) => {
+    console.log('signing in')
     try {
         const userData = await User.create({
             username: req.body.username,
@@ -11,11 +12,13 @@ router.post('/signup', async (req, res) => {
             password: req.body.password,
         });
 //This is to save the user as loggedIn
+
         req.session.save(() => {
             req.session.loggedIn=true,
             res.status(200).json(userData);
         });
-console.log(req.session); //to check if the user successfully loggedIn with the information provided
+        console.log('signing in')
+//console.log(req.session); //to check if the user successfully loggedIn with the information provided
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -25,6 +28,8 @@ console.log(req.session); //to check if the user successfully loggedIn with the 
 
 //LOGIN
 router.post('/login', async (req, res) => {
+
+    console.log('loggin in')
     try {
         const userData = await User.findOne({
             where: {
