@@ -3,5 +3,12 @@
     <h2>Welcome Explorer!</h2>
 </div>
 <div class="galaxy-container">
-    <h3 class="galaxies">Most </h3>
+    <div>
+    <h3 class="galaxies">Most Visited Galaxies</h3>
+    </div>
+    <div>
+        {{#each genre}}
+        {{> moon_post}}
+        {{/each}}
+    </div>
 </div>
