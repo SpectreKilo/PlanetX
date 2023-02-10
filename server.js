@@ -15,7 +15,7 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'Super secret secret',
-    cookie: {},
+    cookie: {maxAge: 3600000},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
@@ -35,5 +35,5 @@ const sess = {
   app.use(routes);
   
   sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log('Now listening'));
+    app.listen(PORT, () => console.log(`Now listening to server at http://localhost:${PORT}`))
   });
