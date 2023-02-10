@@ -31,6 +31,13 @@ BlogPost.init(
                 key: "id"
             },
         },
+        sub_genre_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "sub_genre",
+                key: "id"
+            },
+        },
     },
     {
         sequelize,

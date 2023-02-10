@@ -17,21 +17,34 @@ Comment.belongsTo(User, {
     foreignKey: "user_id"
 })
 
-BlogPost.belongsTo(User, {
-    foreignKey: "user_id"
-})
+// BlogPost.belongsTo(User, {
+//     foreignKey: "user_id"
+// })
 
-User.hasMany(BlogPost, {
-    foreignKey: "user_id",
-    onDelete: 'CASCADE'
-})
+User.belongsToMany(SubGenre, { through: BlogPost, onDelete: 'SET NULL' });
+SubGenre.belongsToMany(User, { through: BlogPost, onDelete: 'SET NULL' });
+
+// User.hasMany(BlogPost, {
+//     foreignKey: "user_id",
+//     onDelete: 'CASCADE'
+// })
 
 Genre.hasMany(SubGenre, {
-    foreignKey: "",
+    foreignKey: "genre_id",
 })
 
 SubGenre.belongsTo(Genre, {
-    foreignKey: "",
+    foreignKey: "genre_id",
 })
+
+// SubGenre.hasMany(BlogPost, {
+//     foreignKey: "user_id",
+//     onDelete: 'CASCADE'
+// })
+
+// BlogPost.belongsTo(User, {
+//     foreignKey: "user_id"
+// })
+
 
 module.exports = { User, BlogPost, Comment, Genre, SubGenre, };
