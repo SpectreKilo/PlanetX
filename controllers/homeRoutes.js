@@ -1,8 +1,10 @@
-const router = require('express'.Router);
+const router = require('express').Router();
 
 
 
-router.get('/', async (req, res) => {});
+router.get('/', async (req, res) => {
+    res.render('login');
+});
 
 
 router.get('/login', (req, res) => {
