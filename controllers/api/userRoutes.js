@@ -3,24 +3,24 @@ const { User } = require('../../models');
 
 
 //SIGNUP routes request
-// router.post('/signup', async (req, res) => {
-//     try {
-//         const userData = await User.create({
-//             username: req.body.username,
-//             email: req.body.email,
-//             password: req.body.password,
-//         });
-// //This is to save the user as loggedIn
-//         req.session.save(() => {
-//             loggedIn = req.session.loggedIn;
-//             res.status(200).json(userData);
-//         });
-// console.log(req.session); //to check if the user successfully loggedIn with the information provided
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json(err);
-//     }
-// });
+router.post('/signup', async (req, res) => {
+    try {
+        const userData = await User.create({
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+        });
+//This is to save the user as loggedIn
+        req.session.save(() => {
+            loggedIn = req.session.loggedIn;
+            res.status(200).json(userData);
+        });
+console.log(req.session); //to check if the user successfully loggedIn with the information provided
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 
 // //LOGIN
