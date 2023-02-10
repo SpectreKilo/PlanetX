@@ -37,5 +37,6 @@
   "bugs": {
     "url": "https://github.com/SpectreKilo/PlanetX/issues"
   },
-  "homepage": "https://github.com/SpectreKilo/PlanetX#readme"
+  "homepage": "https://github.com/SpectreKilo/PlanetX#readme",
+  "devDependencies": {}
 }
