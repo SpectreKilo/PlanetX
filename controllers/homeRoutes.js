@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
             ],
         });
         const subgenres = planetData.map((subGenre) => subGenre.get({ plain:true }));
-    
+    console.log(subgenres)
     res.render('homepage', {
         subgenres,
         loggedIn: req.session.loggedIn
@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 
 // Gets specific subgenres by id
 router.get('/planet/:id', withAuth, async (req, res) => {
-    if (!req.session.logged_in) {
+    if (!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
@@ -49,7 +49,7 @@ router.get('/planet/:id', withAuth, async (req, res) => {
 
 // gets post by specific ID
 router.get('/moon/:id', withAuth, async (req, res) => {
-    if (!req.session.logged_in) {
+    if (!req.session.loggedIn) {
         res.redirect('/login');
         return;
     }
