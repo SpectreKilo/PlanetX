@@ -4,11 +4,8 @@ const withAuth = require('../utils/auth')
 
 
 router.get('/', async (req, res) => {
-    res.render('universe');
+    res.render('homepage');
 });
-
-// add get post by id
-
 
 // Gets specific subgenres by id
 router.get('/planet/:id', withAuth, async (req, res) => {
