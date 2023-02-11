@@ -3,7 +3,7 @@ const withAuth = require('../utils/auth')
 
 
 router.get('/', async (req, res) => {
-    res.render('mothership');
+    res.render('login');
 });
 
 
