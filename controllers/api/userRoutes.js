@@ -56,6 +56,8 @@ console.log(userData)
             return;
         }
         const userD = userData.get({ plain: true});
+        console.log('=== </>')
+        console.log(userD)
 //This is to save the user as loggedIn
         req.session.save(() => {
             req.session.loggedIn=true,
