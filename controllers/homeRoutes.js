@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
     res.render('login');
 });
 
+//! add get post by id
 
 router.get('/login', (req, res) => {
     res.render('login');
