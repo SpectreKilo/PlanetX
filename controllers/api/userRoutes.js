@@ -6,10 +6,10 @@ const { User } = require('../../models');
 router.post('/', async (req, res) => {
     console.log('signing in')
     console.log("this is the signup route")
-    console.log("req.body");
+    console.log(req.body);
     try {
         const userData = await User.create({
-            username: req.body.username,
+            name: req.body.name,
             email: req.body.email,
             password: req.body.password,
         });
