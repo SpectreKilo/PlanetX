@@ -10,11 +10,11 @@
             "comment":  "I hear this ChatGpt a lot.  It's getting a lot of attention.  I did try it and I can say it's pretty impressive. Not sure if I will take very advise from it. "
         },
         {
-            "topic": 2,
+            "id": 2,
             "comment": "Who doesn't like Green Goblin?  Willem Dafoe played this character perfectly"
         },
         {
-            "topic": 3,,
-            "comment": "Love hammer.  Thor!!!"
+            "id": 3,
+            "comment": "Thor!!!"
         }
     ]
