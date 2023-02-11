@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
             ],
         });
         const subgenres = planetData.map((subGenre) => subGenre.get({ plain:true }));
-    
+    console.log(subgenres)
     res.render('homepage', {
         subgenres,
         loggedIn: req.session.loggedIn
