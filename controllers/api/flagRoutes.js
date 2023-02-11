@@ -24,3 +24,5 @@ router.post('/:id', withAuth, async (req,res) => {
         res.status(400).json({ message: "error posting comment"})
     }
 })
+
+module.exports = router;

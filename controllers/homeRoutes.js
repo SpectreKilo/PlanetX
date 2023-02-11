@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, BlogPost, User, SubGenre } = require('../models');
+const { Comment, BlogPost, User, SubGenre, Genre} = require('../models');
 const withAuth = require('../utils/auth')
 
 
@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
         const planetData = await Genre.findAll({
             include: [
                 {
-                    mode:SubGenre,
+                    model:SubGenre,
                     attributes: ["subgenre_name"]
                 },
             ],
