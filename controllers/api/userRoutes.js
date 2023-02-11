@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
 
         req.session.save(() => {
             req.session.loggedIn=true,
+            req.session.user_id = userData.id
             res.status(200).json(userData);
         });
         console.log('signing in')
@@ -31,14 +32,15 @@ router.post('/', async (req, res) => {
 //LOGIN
 router.post('/login', async (req, res) => {
 
-    console.log('loggin in')
+    console.log('loggin in with '+req.body)
     try {
         const userData = await User.findOne({
             where: {
                 email: req.body.email
             }
         });
-
+        console.log('<======>')
+console.log(userData)
         if (!userData) {
             res
                 .status(404)
@@ -53,11 +55,13 @@ router.post('/login', async (req, res) => {
                 .json({ message: 'Incorrect email or password. Please try again!' });
             return;
         }
+        const userD = userData.get({ plain: true});
 //This is to save the user as loggedIn
         req.session.save(() => {
             req.session.loggedIn=true,
+            req.session.user_id = userD.id,
             res.status(200)
-            .json({ user: userData, message: 'You are now logged in!' });
+            .json({ user: userD, message: 'You are now logged in!' });
         });
 
     } catch (err) {

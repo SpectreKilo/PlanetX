@@ -24,8 +24,9 @@ router.get('/', async (req, res) => {
 }
 });
 
-router.get('/mothership', async (req, res) => {
+router.get('/mothership', withAuth, async (req, res) => {
     console.log('/mothership hit!')
+    console.log(req.session.user_id)
     try {
         const shipData = await User.findByPk(req.session.user_id, {
             include: [
