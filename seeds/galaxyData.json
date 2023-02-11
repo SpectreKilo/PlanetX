@@ -1,4 +1,23 @@
 //! Genre
-
 //todo add genre data matching model structure
-    //? need 8 genres
+//? need 8 genres
+[
+    {
+        "genre_name": "Music"
+    },
+    {
+        "genre_name": "Sport"
+    },
+    {
+        "genre_name": "Movies"
+    },
+    {
+        "genre_name": "Books"
+    },
+    {
+        "genre_name": "Travel"
+    },
+    {
+        "genre_name": "Food"
+    }
+]
