@@ -13,7 +13,7 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace('/mothership'); //mothership or something else after logging in?
+            document.location.replace('/'); //mothership or something else after logging in?
         } else {
             alert(response.statusText);
         }
