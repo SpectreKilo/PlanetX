@@ -4,7 +4,24 @@ const withAuth = require('../utils/auth')
 
 
 router.get('/', async (req, res) => {
-    res.render('homepage');
+    try {
+        const planetData = await Genre.findAll({
+            include: [
+                {
+                    mode:SubGenre,
+                    attributes: ["subgenre_name"]
+                },
+            ],
+        });
+        const subgenres = planetData.map((subGenre) => subGenre.get({ plain:true }));
+    
+    res.render('homepage', {
+        subgenres,
+        logged_in: req.session.logged_in
+    });
+} catch (err) {
+    res.status(500).json(err);
+}
 });
 
 // Gets specific subgenres by id
