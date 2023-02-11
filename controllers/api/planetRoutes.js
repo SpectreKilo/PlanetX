@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { BlogPost, User } = require('../../models')
+const { BlogPost, User, Comment } = require('../../models')
 const withAuth = require('../../utils/auth')
 
 //todo Post routes
@@ -46,7 +46,23 @@ router.put('/:id', withAuth, async (req, res) => {
     }
 });
 //! add delete post
-
+router.delete("/:id", withAuth, async (req, res) => {
+    try {
+        const delPost = await BlogPost.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
+        if (!delPost) {
+            res.status(404).json({ message: "there is no blog post associated with this id"});
+            return;
+        }
+        res.status(200).json({message: "successfully deleted blog post", delPost})
+    } catch (err) {
+        res.status(500).json({message: "error deleting this blog post", err})
+    }
+})
 //todo comments
 //? add create comments
 //? add edit comments
