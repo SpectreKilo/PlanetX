@@ -23,6 +23,28 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 //! add edit post
+router.put('/:id', withAuth, async (req, res) => {
+    try {
+        const postData = await BlogPost.update({
+            topic: req.body.topic,
+            content: req.body.content,
+            date_created: Date.now(),
+        },
+        {
+            where: {
+                id: req.params.id,
+            },
+        });
+
+        if(!postData){
+            res.status(404).json({ message: 'No Moon of that Id!'});
+            return;
+        }
+        res.status(200).json(postData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 //! add delete post
 
 //todo comments
