@@ -29,12 +29,12 @@ router.get('/mothership', withAuth, async (req, res) => {
     console.log(req.session.user_id)
     try {
         const shipData = await User.findByPk(req.session.user_id, {
-            include: [
-                {
-                    model:BlogPost,
-                    attributes: ["content", 'user_id', 'date_created']
-                },
-            ],
+            // include: [
+            //     {
+            //          model: BlogPost,
+            //          attributes: ["topic","content", 'user_id', 'date_created'],
+            //     },
+            //],
         });
         console.log(shipData)
         const mothership = shipData.get({ plain:true });
