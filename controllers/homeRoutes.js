@@ -3,17 +3,20 @@ const withAuth = require('../utils/auth')
 
 
 router.get('/', async (req, res) => {
-    res.render('login');
+    res.render('universe');
 });
 
 //! add get post by id
 
+
 router.get('/login', (req, res) => {
+if(req.session.loggedIn) {
+    res.redirect('/')
+    return;
+}
     res.render('login');
 })
 
-router.get('/signup', (req, res) => {
-    res.render('signup');
-})
+
 
 module.exports = router;
