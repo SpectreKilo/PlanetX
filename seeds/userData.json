@@ -13,5 +13,10 @@
       "name": "ThorOdinson",
       "email": "worldsstrongestavenger@asgard.com",
       "password": "N00bMaster69sux"
+    },
+    {
+      "name": "testtest",
+      "email": "test@test.com",
+      "password": "pass1"
     }
   ]
