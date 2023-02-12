@@ -28,6 +28,7 @@ router.get('/mothership', withAuth, async (req, res) => {
     console.log('/mothership hit!')
     console.log(req.session.user_id)
     try {
+        //? change user to blogpost to find posts by session user id
         const shipData = await User.findByPk(req.session.user_id, {
             // include: [
             //     {
@@ -50,6 +51,7 @@ router.get('/mothership', withAuth, async (req, res) => {
 
 // Gets specific subgenres by id
 router.get('/planet/:id', withAuth, async (req, res) => {
+
 
     console.log(req.params.id)
 

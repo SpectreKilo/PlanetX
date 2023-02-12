@@ -4,7 +4,7 @@ const warpSpeedHandler = async (event) => {
 
     console.log("warpSpeedHandler")
 
-        const randomId = Math.floor(Math.random() * 4) + 1
+        const randomId = Math.floor(Math.random() * 30) + 1
         console.log(randomId);
 
     if (randomId) {
@@ -14,8 +14,11 @@ const warpSpeedHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace(`/planet/${randomId}`); // homepage
-        } else {
+
+            document.location.replace(`/planet/${randomId}`);
+        }else {
+            console.log(`we're not ok ${response}`)
+
             alert(response.statusText);
         }
     };
@@ -24,5 +27,5 @@ const warpSpeedHandler = async (event) => {
 
 
 
-document.querySelector('#flag-form').addEventListener('click', warpSpeedHandler);
+document.querySelector('#warp').addEventListener('click', warpSpeedHandler);
 

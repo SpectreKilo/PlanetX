@@ -29,6 +29,7 @@ SubGenre.belongsToMany(User, { through: BlogPost, onDelete: 'SET NULL' });
 //     onDelete: 'CASCADE'
 // })
 
+
 Genre.hasMany(SubGenre, {
     foreignKey: "genre_id",
 })

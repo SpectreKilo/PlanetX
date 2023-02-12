@@ -1,122 +1,136 @@
-[
-    {
-        "subgenre_name": "Hip Hop Music",
-        "subgenre_id": 1
-    },
-    {
-        "subgenre_name": "Rock Music",
-        "subgenre_id": 1
-    },
-    {
-        "subgenre_name": "Reggae Music",
-        "subgenre_id": 1
-    },
-    {
-        "subgenre_name": "Country Music",
-        "subgenre_id": 1
-    },
-    {
-        "subgenre_name": "Pop Music",
-        "subgenre_id": 1
-    },
-    {
-        "subgenre_name": "Basketball",
-        "subgenre_id": 2
-    },
-    {
-        "subgenre_name": "Hockey",
-        "subgenre_id": 2
-    },
-    {
-        "subgenre_name": "Football",
-        "subgenre_id": 2
-    },
-    {
-        "subgenre_name": "Baseball",
-        "subgenre_id": 2
-    },
-    {
-        "subgenre_name": "Tennis",
-        "subgenre_id": 2
-    },
-    {
-        "subgenre_name": "Drama",
-        "subgenre_id": 3
-    },
-    {
-        "subgenre_name": "Action",
-        "subgenre_id": 3
-    },
-    {
-        "subgenre_name": "Comedy",
-        "subgenre_id": 3
-    },
-    {
-        "subgenre_name": "Romance",
-        "subgenre_id": 3
-    },
-    {
-        "subgenre_name": "Suspense",
-        "subgenre_id": 3
-    },
-    {
-        "subgenre_name": "Fantasy",
-        "subgenre_id": 4
-    },
-    {
-        "subgenre_name": "Fiction",
-        "subgenre_id": 4
-    },
-    {
-        "subgenre_name": "Mystery",
-        "subgenre_id": 4
-    },
-    {
-        "subgenre_name": "Drama",
-        "subgenre_id": 4
-    },
-    {
-        "subgenre_name": "Tall Tale",
-        "subgenre_id": 4
-    },
-    {
-        "subgenre_name": "Hawaii",
-        "subgenre_id": 5
-    },
-    {
-        "subgenre_name": "Camping",
-        "subgenre_id": 5
-    },
-    {
-        "subgenre_name": "Alaska",
-        "subgenre_id": 5
-    },
-    {
-        "subgenre_name": "Ice Fishing",
-        "subgenre_id": 5
-    },
-    {
-        "subgenre_name": "Mount Everest",
-        "subgenre_id": 5
-    },
-    {
-        "subgenre_name": "Dumplings",
-        "subgenre_id": 6
-    },
-    {
-        "subgenre_name": "Ramen",
-        "subgenre_id": 6
-    },
-    {
-        "subgenre_name": "Chinese Food",
-        "subgenre_id": 6
-    },
-    {
-        "subgenre_name": "Japanese",
-        "subgenre_id": 6
-    },
-    {
-        "subgenre_name": "Wagyu Steak",
-        "subgenre_id": 6
-    }
-]
+
+    [
+        {
+            "subgenre_name": "Hip Hop Music",
+            "genre_id": 1
+        },
+        {
+            "subgenre_name": "Rock Music",
+            "genre_id": 1
+        },
+        {
+            "subgenre_name": "Reggae Music",
+            "genre_id": 1
+        },
+        {
+            "subgenre_name": "Country Music",
+            "genre_id": 1
+        },
+        {
+            "subgenre_name": "Pop Music",
+            "genre_id": 1
+        },
+
+        {
+            "subgenre_name": "Basketball",
+            "genre_id": 2
+        },
+        {
+            "subgenre_name": "Hockey",
+            "genre_id": 2
+        },
+        {
+            "subgenre_name": "Football",
+            "genre_id": 2
+        },
+        {
+            "subgenre_name": "Baseball",
+            "genre_id": 2
+        },
+        {
+            "subgenre_name": "Tennis",
+            "genre_id": 2
+        },
+
+        
+        {
+            "subgenre_name": "Drama",
+            "genre_id": 3
+            
+        },
+        {
+            "subgenre_name": "Action",
+            "genre_id": 3
+        },
+        {
+            "subgenre_name": "Comedy",
+            "genre_id": 3
+        },
+        {
+            "subgenre_name": "Romance",
+            "genre_id": 3
+        },
+        {
+            "subgenre_name": "Suspense",
+            "genre_id": 3
+        },
+
+
+        {
+            "subgenre_name": "Fantasy",
+            "genre_id": 4
+        },
+        {
+            "subgenre_name": "Fiction",
+            "genre_id": 4
+        },
+        {
+            "subgenre_name": "Mystery",
+            "genre_id": 4
+        },
+        {
+            "subgenre_name": "Drama",
+            "genre_id": 4
+        },
+        {
+            "subgenre_name": "Tall Tale",
+            "genre_id": 4
+        },
+
+
+        {
+            "subgenre_name": "Hawaii",
+            "genre_id": 5
+        },
+        {
+            "subgenre_name": "Camping",
+            "genre_id": 5
+        },
+        {
+            "subgenre_name": "Alaska",
+            "genre_id": 5
+        },
+        {
+            "subgenre_name": "Ice Fishing",
+            "genre_id": 5
+        },
+        {
+            "subgenre_name": "Mount Everest",
+            "genre_id": 5
+        },
+
+
+        {
+            "subgenre_name": "Dumplings",
+            "genre_id": 6
+        },
+        {
+            "subgenre_name": "Ramen",
+            "genre_id": 6
+        },
+        {
+            "subgenre_name": "Chinese Food",
+            "genre_id": 6
+        },
+        {
+            "subgenre_name": "Japanese",
+            "genre_id": 6
+        },
+        {
+            "subgenre_name": "Wagyu Steak",
+            "genre_id": 6
+        }
+
+    ]
+    
+
