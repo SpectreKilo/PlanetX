@@ -19,10 +19,7 @@
             "subgenre_name": "Pop Music",
             "subgenre_id": 1
         },
-        {
-            "subgenre_name": "Disco Music",
-            "subgenre_id": 1
-        },
+
         {
             "subgenre_name": "Basketball",
             "subgenre_id": 2
@@ -43,10 +40,8 @@
             "subgenre_name": "Tennis",
             "subgenre_id": 2
         },
-        {
-            "subgenre_name": "Soccer",
-            "subgenre_id": 2
-        },
+
+        
         {
             "subgenre_name": "Drama",
             "subgenre_id": 3
@@ -68,6 +63,8 @@
             "subgenre_name": "Suspense",
             "subgenre_id": 3
         },
+
+
         {
             "subgenre_name": "Fantasy",
             "subgenre_id": 4
@@ -88,6 +85,8 @@
             "subgenre_name": "Tall Tale",
             "subgenre_id": 4
         },
+
+
         {
             "subgenre_name": "Hawaii",
             "subgenre_id": 5
@@ -101,9 +100,15 @@
             "subgenre_id": 5
         },
         {
-            "subgenre_name": "Mount Everest",
-            "subgenre_id": 6
+            "subgenre_name": "Ice Fishing",
+            "subgenre_id": 5
         },
+        {
+            "subgenre_name": "Mount Everest",
+            "subgenre_id": 5
+        },
+
+
         {
             "subgenre_name": "Dumplings",
             "subgenre_id": 6
@@ -121,8 +126,10 @@
             "subgenre_id": 6
         },
         {
-            "subgenre_name": "Japanese",
+            "subgenre_name": "Wagyu Steak",
             "subgenre_id": 6
         }
+
     ]
+    
     
