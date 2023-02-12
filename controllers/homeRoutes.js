@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, BlogPost, User, SubGenre, Genre} = require('../models');
+const { Comment, BlogPost, User, SubGenre, Genre } = require('../models');
 const withAuth = require('../utils/auth')
 
 
@@ -8,20 +8,20 @@ router.get('/', async (req, res) => {
         const planetData = await Genre.findAll({
             include: [
                 {
-                    model:SubGenre,
+                    model: SubGenre,
                     attributes: ["subgenre_name"]
                 },
             ],
         });
-        const subgenres = planetData.map((subGenre) => subGenre.get({ plain:true }));
-    console.log(subgenres)
-    res.render('homepage', {
-        subgenres,
-        loggedIn: req.session.loggedIn
-    });
-} catch (err) {
-    res.status(500).json(err);
-}
+        const subgenres = planetData.map((subGenre) => subGenre.get({ plain: true }));
+        console.log(subgenres)
+        res.render('homepage', {
+            subgenres,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 router.get('/mothership', withAuth, async (req, res) => {
@@ -38,15 +38,15 @@ router.get('/mothership', withAuth, async (req, res) => {
             //],
         });
         console.log(shipData)
-        const mothership = shipData.get({ plain:true });
-    console.log(mothership)
-    res.render('mothership', {
-        mothership,
-        loggedIn: req.session.loggedIn
-    });
-} catch (err) {
-    res.status(500).json(err);
-}
+        const mothership = shipData.get({ plain: true });
+        console.log(mothership)
+        res.render('mothership', {
+            mothership,
+            loggedIn: req.session.loggedIn
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 // Gets specific subgenres by id
@@ -54,17 +54,20 @@ router.get('/planet/:id', withAuth, async (req, res) => {
     console.log(req.params.id)
     try {
         const subs = await SubGenre.findByPk(req.params.id, {
-            include: [
-                BlogPost,
-            ],
+            // include: [
+            //     BlogPost,
+            // ],
         });
-    const planets = subs.get({ plain:true });
-        console.log('hit before render')
-        console.log(planets)
-    res.render('mothership', {
-        planets, 
-        // loggedIn: req.session.loggedIn
-    });
+        const planet = subs.get({ plain: true });
+
+        console.log(planet)
+
+        res.render('warpspeed', {
+           layout: 'main',
+            ...planet,
+            loggedIn: req.session.loggedIn
+        });
+
     } catch (err) {
         res.status(500).json(err);
     }
@@ -81,7 +84,7 @@ router.get('/moon/:id', withAuth, async (req, res) => {
             include: [
                 User,
                 {
-                model: Comment,
+                    model: Comment,
                     include: [
                         User
                     ]
@@ -89,22 +92,22 @@ router.get('/moon/:id', withAuth, async (req, res) => {
 
             ],
         });
-    const blogPosts = blogData.get({ plain:true });
+        const blogPosts = blogData.get({ plain: true });
         console.log(blogPosts)
-    res.render('moon_post', {
-        blogPosts,
-        loggedIn: req.session.loggedIn
-    });
+        res.render('moon_post', {
+            blogPosts,
+            loggedIn: req.session.loggedIn
+        });
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
 router.get('/login', (req, res) => {
-if(req.session.loggedIn) {
-    res.redirect('/')
-    return;
-}
+    if (req.session.loggedIn) {
+        res.redirect('/')
+        return;
+    }
     res.render('login');
 })
 
