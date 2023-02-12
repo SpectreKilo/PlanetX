@@ -54,15 +54,15 @@ router.get('/planet/:id', withAuth, async (req, res) => {
     console.log(req.params.id)
     try {
         const subs = await SubGenre.findByPk(req.params.id, {
-            include: [
-                BlogPost,
-            ],
+            // include: [
+            //     BlogPost,
+            // ],
         });
-        const planet = subGenreData.get({ plain: true });
+        const planet = subs.get({ plain: true });
 
         console.log(planet)
 
-        res.render('homepage', {
+        res.render('warpspeed', {
            layout: 'main',
             ...planet,
             loggedIn: req.session.loggedIn
