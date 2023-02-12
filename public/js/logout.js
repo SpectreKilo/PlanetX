@@ -1,7 +1,8 @@
 const logout = async (event) => {
 event.preventDefault();
+console.log('hits the logout function <=========>')
 
-    const response = await fetch('/logout', {
+    const response = await fetch('/api/users/logout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
     });
@@ -9,5 +10,5 @@ event.preventDefault();
     console.log('logout.js fetch is here')
 
 };
-
+console.log('hits the js file <===>')
 document.querySelector('#logout').addEventListener('click', logout);
