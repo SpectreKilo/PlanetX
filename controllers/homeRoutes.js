@@ -60,8 +60,9 @@ router.get('/planet/:id', withAuth, async (req, res) => {
     const planets = subs.get({ plain:true });
         console.log('hit before render')
         console.log(planets)
-    res.render('homepage', {
-        planets
+    res.render('warpspeed', {
+        planets, 
+        // loggedIn: req.session.loggedIn
     });
     } catch (err) {
         res.status(500).json(err);

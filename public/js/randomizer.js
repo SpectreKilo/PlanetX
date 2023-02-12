@@ -14,8 +14,10 @@ const warpSpeedHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (!response.ok) {
-            console.log("we're not ok")
+        if (response.ok) {
+            document.location.replace(`/planet/${randomId}`);
+        }else {
+            console.log(`we're not ok ${response}`)
             alert(response.statusText);
         }
     };
@@ -24,5 +26,5 @@ const warpSpeedHandler = async (event) => {
 
 
 
-document.querySelector('#flag-form').addEventListener('click', warpSpeedHandler);
+document.querySelector('#warp').addEventListener('click', warpSpeedHandler);
 
