@@ -50,25 +50,32 @@ router.get('/mothership', withAuth, async (req, res) => {
 
 // Gets specific subgenres by id
 router.get('/planet/:id', withAuth, async (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-        return;
-    }
+
+console.log('hit planet')
+
+console.log(req.params.id)
+
     try {
-        const subGenre = await SubGenre.findByPk(req.params.id, {
-            include: [
-                BlogPost,
-            ],
+
+       const subGenreData = await SubGenre.findByPk(req.params.id, {
+     //   attributes: {subgenre_name},
+        // include: [{ model: Project }],
         });
-    const planets = subGenre.get({ plain:true });
-        console.log(planets)
-    res.render('galaxies', {
-        planets,
+    const planet = subGenreData.get({ plain:true });
+
+        console.log('planetspage')
+        console.log(subGenreData)
+       console.log(planet)
+    res.render('homepage' , {
+        layout:'main',
+       planet,
         loggedIn: req.session.loggedIn
     });
+
     } catch (err) {
         res.status(500).json(err);
     }
+
 });
 
 // gets post by specific ID
