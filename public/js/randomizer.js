@@ -14,7 +14,7 @@ const warpSpeedHandler = async (event) => {
         });
 
         if (response.ok) {
-            document.location.replace(`/planet`); // homepage
+            document.location.replace(`/planet/${randomId}`); // homepage
         } else {
             alert(response.statusText);
         }

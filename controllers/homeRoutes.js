@@ -64,8 +64,8 @@ router.get('/planet/:id', withAuth, async (req, res) => {
         console.log(planet)
 
         res.render('homepage', {
-            layout: 'main',
-            planet,
+           layout: 'main',
+            ...planet,
             loggedIn: req.session.loggedIn
         });
 
