@@ -28,6 +28,7 @@ router.get('/mothership', withAuth, async (req, res) => {
     console.log('/mothership hit!')
     console.log(req.session.user_id)
     try {
+        //? change user to blogpost to find posts by session user id
         const shipData = await User.findByPk(req.session.user_id, {
             // include: [
             //     {
@@ -53,9 +54,9 @@ router.get('/planet/:id', withAuth, async (req, res) => {
     console.log(req.params.id)
     try {
         const subs = await SubGenre.findByPk(req.params.id, {
-            // include: [
-            //     BlogPost,
-            // ],
+            include: [
+                BlogPost,
+            ],
         });
     const planets = subs.get({ plain:true });
         console.log('hit before render')
