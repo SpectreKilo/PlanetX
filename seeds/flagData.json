@@ -1,14 +1,17 @@
     [
         {
-            "id": 1,
-            "comment":  "I hear this ChatGpt a lot.  It's getting a lot of attention.  I did try it and I can say it's pretty impressive. Not sure if I will take very advise from it. "
+            "user_id": 1,
+            "response":  "I hear this ChatGpt a lot.  It's getting a lot of attention.  I did try it and I can say it's pretty impressive. Not sure if I will take very advise from it. ",
+            "topic_id": 1
         },
         {
-            "id": 2,
-            "comment": "Who doesn't like Green Goblin?  Willem Dafoe played this character perfectly"
+            "user_id": 2,
+            "response": "Who doesn't like Green Goblin?  Willem Dafoe played this character perfectly",
+            "topic_id": 2
         },
         {
-            "id": 3,
-            "comment": "Thor!!!"
+            "user_id": 3,
+            "response": "Thor!!!",
+            "topic_id": 3
         }
     ]

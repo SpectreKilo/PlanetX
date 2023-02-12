@@ -4,7 +4,7 @@ const warpSpeedHandler = async (event) => {
 
     console.log("warpSpeedHandler")
 
-        const randomId = Math.floor(Math.random() * 4) + 1
+        const randomId = Math.floor(Math.random() * 30) + 1
         console.log(randomId);
 
     if (randomId) {
@@ -14,9 +14,8 @@ const warpSpeedHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if (response.ok) {
-            document.location.replace('/'); // homepage
-        } else {
+        if (!response.ok) {
+            console.log("we're not ok")
             alert(response.statusText);
         }
     };
