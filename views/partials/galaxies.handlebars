@@ -3,10 +3,11 @@
     <div class="col s12 m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
-          <span class="card-title">{{planets.subgenre_name}}</span>
-          
-          <p>{{planets.subgenre_name}}</p>
-  
+          <h3><span class="card-title">{{genre_name}}</span></h3>
+          <p>Is this working? this is the galaxies page</p>
+          {{#each sub_genres}}
+          <p>{{sub_genres.subgenre_name}}</p>
+  {{/each}}
         </div>
       </div>
     </div>
