@@ -1,14 +1,26 @@
 
 
-const subBtn = async (event) => {
+let subBtn = async (event) => {
     event.preventDefault();
     console.log('Ive been clicked')
-// let stuff = document.querySelector('#Btn').className
-//     console.log(stuff)
-console.log(event.target.value);
+let subId = event.target.value;
+console.log(subId)
+
+const response = await fetch(`/moon/${subId}`, {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json'}
+});
+if (response.ok) {
+    document.location.replace(`/moon/${subId}`);
+} else {
+    alert(response.status)
+};
+};
+
+let buttonsArray = document.querySelectorAll('#Btn');
+console.log(buttonsArray)
+for(let i = 0; i < buttonsArray.length; i++){
+    buttonsArray[i].addEventListener('click', subBtn);
 }
-const buttonsArray = document.querySelectorAll('#Btn');
-for(let btn in buttonsArray){
-    addEventListener('click', subBtn);
-}
+
 
