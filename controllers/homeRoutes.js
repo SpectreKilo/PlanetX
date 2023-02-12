@@ -24,6 +24,30 @@ router.get('/', async (req, res) => {
 }
 });
 
+router.get('/mothership', withAuth, async (req, res) => {
+    console.log('/mothership hit!')
+    console.log(req.session.user_id)
+    try {
+        const shipData = await User.findByPk(req.session.user_id, {
+            // include: [
+            //     {
+            //          model: BlogPost,
+            //          attributes: ["topic","content", 'user_id', 'date_created'],
+            //     },
+            //],
+        });
+        console.log(shipData)
+        const mothership = shipData.get({ plain:true });
+    console.log(mothership)
+    res.render('mothership', {
+        mothership,
+        loggedIn: req.session.loggedIn
+    });
+} catch (err) {
+    res.status(500).json(err);
+}
+});
+
 // Gets specific subgenres by id
 router.get('/planet/:id', withAuth, async (req, res) => {
     if (!req.session.loggedIn) {
