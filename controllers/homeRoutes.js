@@ -9,12 +9,12 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: SubGenre,
-                    attributes: ["subgenre_name"]
+                    attributes: ["id", "subgenre_name", "genre_id"]
                 },
             ],
         });
         const subgenres = planetData.map((subGenre) => subGenre.get({ plain: true }));
-        console.log(subgenres)
+        console.log(subgenres[0])
         res.render('homepage', {
             subgenres,
             loggedIn: req.session.loggedIn
