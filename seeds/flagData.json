@@ -1,9 +1,3 @@
-//! comments
-
-//todo add comments to match comment models
-    //? one for each post in blogData.json
-    //use user ids 1-4
-
     [
         {
             "id": 1,
