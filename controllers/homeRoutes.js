@@ -50,21 +50,18 @@ router.get('/mothership', withAuth, async (req, res) => {
 
 // Gets specific subgenres by id
 router.get('/planet/:id', withAuth, async (req, res) => {
-    if (!req.session.loggedIn) {
-        res.redirect('/login');
-        return;
-    }
+    console.log(req.params.id)
     try {
-        const subGenre = await SubGenre.findByPk(req.params.id, {
-            include: [
-                BlogPost,
-            ],
+        const subs = await SubGenre.findByPk(req.params.id, {
+            // include: [
+            //     BlogPost,
+            // ],
         });
-    const planets = subGenre.get({ plain:true });
+    const planets = subs.get({ plain:true });
+        console.log('hit before render')
         console.log(planets)
-    res.render('galaxies', {
-        planets,
-        loggedIn: req.session.loggedIn
+    res.render('homepage', {
+        planets
     });
     } catch (err) {
         res.status(500).json(err);
