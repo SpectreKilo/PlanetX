@@ -61,7 +61,7 @@ router.get('/planet/:id', withAuth, async (req, res) => {
     const planets = subs.get({ plain:true });
         console.log('hit before render')
         console.log(planets)
-    res.render('warpspeed', {
+    res.render('mothership', {
         planets, 
         // loggedIn: req.session.loggedIn
     });
