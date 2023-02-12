@@ -24,7 +24,7 @@
         <li class="tab"><a href="/">Homepage</a></li>
         {{#if loggedIn}}
         <li class="tab"><a class="active" href="/mothership">Mothership</a></li>
-        <li class="tab"><a href="#test4">Warp Speed</a></li>
+        <li class="tab"><a id="flag-form"type="submit" >Warp Speed</a></li>
         <li class="tab"><a id="logout" href="/login">Log Out</a></li>
         {{else}}
   <li class="tab"><a href="/login">Login</a></li>
@@ -40,6 +40,7 @@
      <script type="text/javascript" src="js/materialize.min.js"></script>
      {{#if loggedIn}}
      <script src="/js/logout.js"></script>
+          <script src="/js/randomizer.js"></script>
      {{/if}}
 </body>
 </html>
