@@ -3,6 +3,7 @@ const BlogPost = require("./BlogPost");
 const Comment = require("./Comment");
 const Genre = require("./Genre");
 const SubGenre = require("./SubGenre");
+const Photos = require("./Photos");
 
 Comment.belongsTo(BlogPost, {
     foreignKey: "topic_id",
@@ -48,4 +49,4 @@ SubGenre.belongsTo(Genre, {
 // })
 
 
-module.exports = { User, BlogPost, Comment, Genre, SubGenre, };
+module.exports = { User, BlogPost, Comment, Genre, SubGenre, Photos };
