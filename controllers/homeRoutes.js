@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model:SubGenre,
-                    //attributes: ["subgenre_name"]
+                    attributes: ["subgenre_name"]
                 },
             ],
         });
