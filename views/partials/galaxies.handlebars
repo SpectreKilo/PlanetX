@@ -5,9 +5,10 @@
         <div class="card-content white-text">
           <h3><span class="card-title">{{genre_name}}</span></h3>
           {{#each sub_genres}}
-          <p>{{subgenre_name}}</p>
+          <button class="{{subgenre_name}}" id="Btn" value='{{id}}'>{{subgenre_name}}</button>
   {{/each}}
         </div>
       </div>
     </div>
   </div>
+
