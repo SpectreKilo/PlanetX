@@ -19,8 +19,8 @@ if (response.ok) {
 
 let buttonsArray = document.querySelectorAll('#Btn');
 console.log(buttonsArray)
-for(let btn in buttonsArray){
-    addEventListener('click', subBtn);
+for(let i = 0; i < buttonsArray.length; i++){
+    buttonsArray[i].addEventListener('click', subBtn);
 }
 
 
