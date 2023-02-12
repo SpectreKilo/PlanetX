@@ -10,14 +10,12 @@ const warpSpeedHandler = async (event) => {
     if (randomId) {
         const response = await fetch(`/planet/${randomId}`, {
             method: 'GET',
-
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace(`/planet/${randomId}`);
-        }else {
-            console.log(`we're not ok ${response}`)
+            document.location.replace(`/planet/${randomId}`); // homepage
+        } else {
             alert(response.statusText);
         }
     };
