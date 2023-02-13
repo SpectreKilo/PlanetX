@@ -21,7 +21,10 @@ router.post('/', withAuth, async (req, res) => {
 
         // const photoUser = uploadPhoto.get({ plain: true });
      console.log(req.session.description);
-        res.render('photoForm');
+
+        res.render('photoForm', { 
+          logged_in: req.session.loggedIn 
+        });
         //     layout: 'main',
         //     ...photo,
         //     loggedIn: req.session.loggedIn
@@ -31,7 +34,8 @@ router.post('/', withAuth, async (req, res) => {
         // const photo = Photo.get({plain: true});
         // // res.render('moonForm',{ photo, 
         // // loggedIn: req.session.loggedIn});
-        res.status(200).json(uploadPhoto);
+        res.status(200)
+        // s.json(uploadPhoto);
     } catch (err) {
         res.status(400).json(err);
     }
