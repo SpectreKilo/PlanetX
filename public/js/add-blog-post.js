@@ -1,8 +1,8 @@
 const blogFormHandler = async (event) => {
     event.preventDefault();
     console.log('before the if statements')
-    const topic = document.querySelector('#moonTopic').value.trim();
-    const content = document.querySelector('#moonContent').value.trim();
+    const topic = document.querySelector('#topicPost').value.trim();
+    const content = document.querySelector('#contentPost').value.trim();
     if (topic && content) {
         const response = await fetch('/api/planets', {
             method: 'POST',
