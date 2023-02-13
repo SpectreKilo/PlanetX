@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment, BlogPost, User, SubGenre, Genre, Photos, } = require('../models');
+const { Comment, BlogPost, User, SubGenre, Genre, Photos} = require('../models');
 const withAuth = require('../utils/auth')
 
 
@@ -72,6 +72,28 @@ router.get('/planet/:id', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// Gets all photos 
+router.get('/photos', withAuth, async (req, res) => {
+    try {
+        // Get all projects and JOIN with user data
+        const photoData = await Photos.findAll({
+          
+        });
+    
+        // Serialize data so the template can read it
+        const photo = photoData.map((photo) => photo.get({ plain: true }));
+    
+        // Pass serialized data and session flag into template
+        res.render('photoForm', { 
+            photo,
+          logged_in: req.session.logged_in 
+        });
+      } catch (err) {
+        res.status(500).json(err);
+      }
+    });
+
 
 // gets post by specific ID
 router.get('/moon/:id', withAuth, async (req, res) => {
