@@ -1,4 +1,4 @@
-
+//Coudinary widget
     var myWidget = cloudinary.createUploadWidget({
         cloudName: 'dx5bns6xa',
         uploadPreset: 'uw_test'
@@ -17,10 +17,10 @@
             });
     
             if (response.ok) {
-                document.location.replace('/');
-                console.log('ok')
+                document.location.replace('/photos');
+
             } else {
-                // alert('response.statusText');
+                // alert('response.statusText'); for some reason the error was about length not match
                 document.location.replace('/photos');
             }
         }

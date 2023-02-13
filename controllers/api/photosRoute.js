@@ -15,25 +15,15 @@ router.post('/', withAuth, async (req, res) => {
             req.session.loggedIn = true;
 
             res.status(200)
-            // .json(userData);
         });
    
-
         // const photoUser = uploadPhoto.get({ plain: true });
      console.log(req.session.description);
 
         res.render('photoForm', { 
           logged_in: req.session.loggedIn 
         });
-        //     layout: 'main',
-        //     ...photo,
-        //     loggedIn: req.session.loggedIn
-        // });
 
-
-        // const photo = Photo.get({plain: true});
-        // // res.render('moonForm',{ photo, 
-        // // loggedIn: req.session.loggedIn});
         res.status(200)
         // s.json(uploadPhoto);
     } catch (err) {
