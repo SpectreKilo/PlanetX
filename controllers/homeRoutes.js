@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Comment, BlogPost, User, SubGenre, Genre, Photos} = require('../models');
 const withAuth = require('../utils/auth')
 
-
 router.get('/', async (req, res) => {
     try {
         const planetData = await Genre.findAll({
@@ -14,7 +13,6 @@ router.get('/', async (req, res) => {
             ],
         });
         const subgenres = planetData.map((subGenre) => subGenre.get({ plain: true }));
-        console.log(subgenres[0])
         res.render('homepage', {
             subgenres,
             loggedIn: req.session.loggedIn
@@ -25,8 +23,6 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/mothership', withAuth, async (req, res) => {
-    console.log('/mothership hit!')
-    console.log(req.session.user_id)
     try {
         //? change user to blogpost to find posts by session user id
         const shipData = await User.findByPk(req.session.user_id, {
@@ -37,9 +33,7 @@ router.get('/mothership', withAuth, async (req, res) => {
             //     },
             //],
         });
-        console.log(shipData)
         const mothership = shipData.get({ plain: true });
-        console.log(mothership)
         res.render('mothership', {
             mothership,
             loggedIn: req.session.loggedIn
@@ -51,7 +45,6 @@ router.get('/mothership', withAuth, async (req, res) => {
 
 // Gets specific subgenres by id
 router.get('/planet/:id', withAuth, async (req, res) => {
-    console.log(req.params.id)
     try {
         const subs = await SubGenre.findByPk(req.params.id, {
             //  include: [
@@ -60,7 +53,6 @@ router.get('/planet/:id', withAuth, async (req, res) => {
         });
         const planet = subs.get({ plain: true });
 
-        console.log(planet)
 
         res.render('warpspeed', {
            layout: 'main',
@@ -96,7 +88,6 @@ router.get('/photos', withAuth, async (req, res) => {
 
 //get specific subgenre not warp
 router.get('/planets/:id', withAuth, async (req, res) => {
-    console.log(req.params.id)
     try {
         const subs = await SubGenre.findByPk(req.params.id, {
             //   include: [
@@ -105,9 +96,7 @@ router.get('/planets/:id', withAuth, async (req, res) => {
         });
         const planet = subs.get({ plain: true });
 
-        console.log(planet)
-
-        res.render('moons', {
+        res.render('moon', {
            layout: 'main',
             ...planet,
             loggedIn: req.session.loggedIn
@@ -121,28 +110,26 @@ router.get('/planets/:id', withAuth, async (req, res) => {
 // gets post by specific ID
 router.get('/moon/:id', withAuth, async (req, res) => {
     try {
-        const blogData = await SubGenre.findByPk(req.params.id, {
-            // include: [
-            //    { model: User,
-            //     include: []},
-            //     {
-            //         model: Comment,
-            //         include: [
-            //             User
-            //         ]
-            //     },
+      
+        const blogData = await BlogPost.findAll({
+            where: {
+              sub_genre_id: 1
+            }
+          });
 
-            // ],
-        });
-        const blogPosts = blogData.get({ plain: true });
-        console.log(blogPosts)
+  blogPostData = blogData.map((subGenre) => subGenre.get({ plain: true }));
+  console.log('<=====>')
+  console.log(blogPostData)
+  console.log('<=====>')
         res.render('moons', {
-            blogPosts,
+            topics: blogPostData,
             loggedIn: req.session.loggedIn
         });
     } catch (err) {
+        console.log("this is route issue")
         res.status(500).json(err);
     }
+
 });
 
 router.get('/login', (req, res) => {
