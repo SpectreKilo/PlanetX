@@ -1,13 +1,34 @@
-{{!-- post page displaying all comments for this post and allowing user to comment on post --}}
+{{!-- post page displaying all comments for this post and allowing user to comment on post
 
 <section>
-    <href href="/post/{{moon.id}}">
-    <header>{{moon.title}}</header></href>
-    <p class="" id={{moon.id}}>{{moon.content}}</p>
+    <header>{{post.topic}}</header>
+    <p class="" id={{post.id}}>{{post.content}}</p>
 </section>
 
 {{> flagForm}}
 
-</section>
+</section> --}}
 
-<script src="/public/js/add-Comment.js"></script>
+<div class="divider"></div>
+<div class="row"></div>
+<div class="row container">
+  <form class="col s10 blogForm blue-grey lighten-4">
+
+    <div class="row">
+      <h2>Blog Form</h2>
+      <div class="input-field col s6">
+        <input placeholder="Topic" type="text" class="" id="topicPost">
+        <label for="Topic">Topic</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Content" type="text" class="" id="contentPost">
+        <label for="Content">Content</label>
+      </div>
+    </div>
+      <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
+  </form>
+
+<script src="/public/js/add-blog-post.js"></script>
