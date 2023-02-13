@@ -21,12 +21,17 @@
 
             } else {
                 // alert('response.statusText'); for some reason the error was about length not match
+                function interval(){
                 document.location.replace('/photos');
+                } 
+                setInterval(interval, 500);
             }
         }
         }   
+        
     }
     )
+
     console.log(myWidget);
 
 
