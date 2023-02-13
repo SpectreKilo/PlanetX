@@ -15,7 +15,20 @@ Photos.init(
     description: {
       type: DataTypes.STRING,
     },
-
+  user_id: {
+    type: DataTypes.INTEGER,
+    references: {
+        model: "user",
+        key: "id"
+    },
+},
+// sub_genre_id: {
+//     type: DataTypes.INTEGER,
+//     references: {
+//         model: "sub_genre",
+//         key: "id"
+//     },
+// },
   },
   {
     sequelize,
