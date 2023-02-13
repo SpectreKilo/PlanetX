@@ -107,7 +107,7 @@ router.get('/planets/:id', withAuth, async (req, res) => {
 
         console.log(planet)
 
-        res.render('moons', {
+        res.render('moon', {
            layout: 'main',
             ...planet,
             loggedIn: req.session.loggedIn
@@ -121,16 +121,17 @@ router.get('/planets/:id', withAuth, async (req, res) => {
 // gets post by specific ID
 router.get('/moon/:id', withAuth, async (req, res) => {
     try {
-        const blogData = await SubGenre.findByPk(req.params.id, {
+        // const blogData = await SubGenre.findByPk(req.params.id, {
+        const blogData = await BlogPost.findAll(req.params.id, {
             // include: [
-            //    { model: User,
-            //     include: []},
+             //   { model: SubGenre,
+                 //   attributes: ["id"]
             //     {
             //         model: Comment,
             //         include: [
             //             User
             //         ]
-            //     },
+              //   },
 
             // ],
         });
