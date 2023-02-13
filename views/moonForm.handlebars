@@ -5,20 +5,9 @@
     <header>{{moon.title}}</header></href>
     <p class="" id={{moon.id}}>{{moon.content}}</p>
 </section>
-<div>
 
-    
-<label for="comment-space">Flags:</label>
-<textarea class="new-comment" name="comment" id="comment" cols="30" rows="10" placeholder="Plant Your Flag..."></textarea>
-</div>
-<div>
-<button id="sub-btn" type="submit">submit</button>
-</div>
-<section>
-{{#each comment.content as |comment|}}
-{{> comment-details}}
-{{!-- display all comments from partials --}}
-{{/each}}
+{{> flagForm}}
+
 </section>
 
 <script src="/public/js/add-Comment.js"></script>
