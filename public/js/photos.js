@@ -39,3 +39,29 @@
         myWidget.open();
     }, false);
 
+
+
+
+    const delPhotoHandler = async (event) => {
+        console.log('click delete');
+
+const id = event.target.getAttribute('data-id');
+
+if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/photos/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/photos');
+    } else {
+      alert('Failed to delete project');
+    }
+  }
+      };
+    
+      document
+      .querySelector('#photo-list')
+      .addEventListener('click', delPhotoHandler);
