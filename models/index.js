@@ -47,12 +47,12 @@ SubGenre.belongsTo(Genre, {
 // BlogPost.belongsTo(User, {
 //     foreignKey: "user_id"
 // })
-// User.hasMany(Photos, {
-//     foreignKey: "photo_id",
-// })
+User.hasMany(Photos, {
+    foreignKey: "user_id",
+})
 
-// Photos.belongsTo(User, {
-//     foreignKey: "user_id"
-// })
+Photos.belongsTo(User, {
+    foreignKey: "user_id"
+})
 
 module.exports = { User, BlogPost, Comment, Genre, SubGenre, Photos };

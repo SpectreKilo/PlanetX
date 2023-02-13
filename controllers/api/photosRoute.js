@@ -6,7 +6,10 @@ const withAuth = require('../../utils/auth');
 //! add create post
 router.post('/', withAuth, async (req, res) => {
     try {
-        const uploadPhoto = await Photos.create(req.body);
+        const uploadPhoto = await Photos.create({
+            ...req.body,
+            user_id: req.session.user_id,
+        });
         console.log(req.body);
         console.log(uploadPhoto);
 
