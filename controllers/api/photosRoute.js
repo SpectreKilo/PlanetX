@@ -21,7 +21,7 @@ router.post('/', withAuth, async (req, res) => {
      console.log(req.session.description);
 
         res.render('photoForm', { 
-          logged_in: req.session.loggedIn 
+          loggedIn: req.session.loggedIn 
         });
 
         res.status(200)
@@ -30,5 +30,25 @@ router.post('/', withAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+router.delete('/:id', async (req, res) => {
+    try {
+      const photoData = await Photos.destroy({
+        where: {
+          id: req.params.id,
+        },
+      });
+  
+      if (!photoData) {
+        res.status(404).json({ message: 'No project found with this id!' });
+        return;
+      }
+  
+      res.status(200).json(photoData);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+  
 
 module.exports = router;
