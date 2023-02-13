@@ -76,7 +76,7 @@ router.get('/planet/:id', withAuth, async (req, res) => {
 // Gets all photos 
 router.get('/photos', withAuth, async (req, res) => {
     try {
-        // Get all projects and JOIN with user data
+        // Get all projects 
         const photoData = await Photos.findAll({
           
         });
