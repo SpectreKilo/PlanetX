@@ -4,7 +4,9 @@
   "description": "Space themed blog website that allows users to discuss topics with each other.",
   "main": "server.js",
   "dependencies": {
+    "@cloudinary/url-gen": "^1.9.0",
     "bcrypt": "^5.1.0",
+    "cloudinary": "^1.33.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
@@ -37,6 +39,5 @@
   "bugs": {
     "url": "https://github.com/SpectreKilo/PlanetX/issues"
   },
-  "homepage": "https://github.com/SpectreKilo/PlanetX#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/SpectreKilo/PlanetX#readme"
 }

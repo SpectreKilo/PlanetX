@@ -23,4 +23,3 @@ for(let i = 0; i < buttonsArray.length; i++){
     buttonsArray[i].addEventListener('click', subBtn);
 }
 
-
