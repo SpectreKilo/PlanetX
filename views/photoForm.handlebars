@@ -1,26 +1,38 @@
 {{!-- homepage --}}
 <div class="header center-align">
     <h2>My Moments </h2>
-    <button id="upload_widget" class="cloudinary-button">Upload files</button>
 </div>
 
-
-<script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-
-{{#if photo.length}}
-<div class="galaxy-container center-align " id="photo-list"</div>
-    <div>
-        {{#each photo}}
-
-        <h3 class=> </h3>
-       <a href="/api/photos/{{id}}"> <img src={{description}} alt=”Image” height=auto width=300></a>
-
-        <button data-id="{{id}}" class="cloudinary-button">delete</button>
-
-        {{/each}}
-
+<div class="row">
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <div class="col s3">
+        <button id="upload_widget" class="cloudinary-button">Upload Photo</button>
     </div>
+
+    <div class="col s9">
+    {{#if photo.length}}
+        <div class="row galaxy-container center-align " id="photo-list" </div>
+            <div>
+
+                {{#each photo}}
+
+                <div class="col s12 m5">
+
+                    <a href="/api/photos/{{id}}"> <img src={{description}} alt=”Image” height=auto width=400>
+
+                        <button data-id="{{id}}" class="waves-effect waves-light btn-small purple">delete</button>
+                    </a>
+                </div>
+                {{/each}}
+
+            </div>
+        </div>
+    {{/if}}
+    </div>
+
 </div>
-{{/if}}
+
+
+
 </div>
 <script src="/js/photos.js"></script>
