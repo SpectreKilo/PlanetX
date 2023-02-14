@@ -113,7 +113,8 @@ router.get('/moon/:id', withAuth, async (req, res) => {
       
         const blogData = await BlogPost.findAll({
             where: {
-              sub_genre_id: 1
+              sub_genre_id: 
+               req.params.id
             }
           });
 
@@ -123,7 +124,9 @@ router.get('/moon/:id', withAuth, async (req, res) => {
   console.log('<=====>')
         res.render('moons', {
             topics: blogPostData,
-            loggedIn: req.session.loggedIn
+            loggedIn: req.session.loggedIn,
+            sub_id: blogPostData[0].sub_genre_id
+             
         });
     } catch (err) {
         console.log("this is route issue")
