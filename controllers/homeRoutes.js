@@ -120,7 +120,9 @@ router.get('/moon/:id', withAuth, async (req, res) => {
           console.log('<===========>')
           console.log(blogData);
           if(!blogData[0]){
-           res.render('moons')
+           res.render('moons', {
+            loggedIn: req.session.loggedIn,
+           })
             return;
           } 
 
