@@ -52,17 +52,18 @@ router.get('/planet/:id', withAuth, async (req, res) => {
             //   ],
         });
         const planet = subs.get({ plain: true });
-        
+        var subId = req.params.id;
         const warpPost = await BlogPost.findAll({
             where: {
-                sub_genre_id: 1
+                sub_genre_id: subId,
             }
         });
+        console.log(warpPost)
         const warpDisp = warpPost.map((subG) => subG.get({plain: true}));
         console.log(warpDisp)
         res.render('warpspeed', {
            layout: 'main',
-            planet,
+            ...planet,
             warpDisp,
             loggedIn: req.session.loggedIn
         });
