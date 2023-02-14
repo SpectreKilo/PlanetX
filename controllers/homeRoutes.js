@@ -121,6 +121,7 @@ router.get('/moon/:id', withAuth, async (req, res) => {
           console.log(blogData);
           if(!blogData[0]){
            res.render('moons', {
+            sub_id: req.params.id,
             loggedIn: req.session.loggedIn,
            })
             return;

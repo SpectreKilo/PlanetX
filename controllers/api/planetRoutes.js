@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth')
 //todo Post routes
 //! add create post
 router.post('/', withAuth, async (req, res) => {
-   
+   console.log(req.body)
     try {
       
         const moon = await BlogPost.create({
