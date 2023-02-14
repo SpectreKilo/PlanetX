@@ -3,10 +3,6 @@ const { BlogPost, Comment, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/:id', withAuth, async (req,res) => {
-    console.log ('this is the comment route')
-    console.log(req.body)
-    console.log(req.session.user_id)
-    console.log(User.name)
         try {
             const commentData = await Comment.create({
             ...req.body,
@@ -18,7 +14,6 @@ router.post('/:id', withAuth, async (req,res) => {
                 },
             ]
          });
-        console.log(commentData)
         res.status(200).json({message: "comment successfully created"});
     } catch (err) {
         res.status(400).json({ message: "error posting comment"})

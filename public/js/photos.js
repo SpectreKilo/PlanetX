@@ -4,9 +4,7 @@
         uploadPreset: 'uw_test'
     }, (error, result) => {
         if (!error && result && result.event === "success") {
-            console.log('Done! Here is the image info: ', result.info);
            var description = `https://res.cloudinary.com/dx5bns6xa/image/upload/v1676240737/${result.info.public_id}`
-          console.log(description)
 
           if (description) {
 
@@ -20,7 +18,6 @@
                 document.location.replace('/photos');
 
             } else {
-                // alert('response.statusText'); for some reason the error was about length not match
                 function interval(){
                 document.location.replace('/photos');
                 } 
@@ -32,18 +29,12 @@
     }
     )
 
-    console.log(myWidget);
-
-
     document.getElementById("upload_widget").addEventListener("click", function () {
         myWidget.open();
     }, false);
 
 
-
-
     const delPhotoHandler = async (event) => {
-        console.log('click delete');
 
 const id = event.target.getAttribute('data-id');
 

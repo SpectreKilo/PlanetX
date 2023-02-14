@@ -10,8 +10,6 @@ router.post('/', withAuth, async (req, res) => {
             ...req.body,
             user_id: req.session.user_id,
         });
-        console.log(req.body);
-        console.log(uploadPhoto);
 
         req.session.save(() => {
             req.session.description = uploadPhoto.id;
@@ -21,7 +19,6 @@ router.post('/', withAuth, async (req, res) => {
         });
    
         // const photoUser = uploadPhoto.get({ plain: true });
-     console.log(req.session.description);
 
         res.render('photoForm', { 
           loggedIn: req.session.loggedIn 
@@ -56,9 +53,7 @@ router.delete('/:id', async (req, res) => {
 
   //get specific subgenre not warp
 router.get('/:id', withAuth, async (req, res) => {
-    console.log(req.params.id)
     try {
-        console.log('api ok')
         const photoData = await Photos.findByPk(req.params.id, {
             where: {
                 id: req.params.id,
@@ -66,7 +61,6 @@ router.get('/:id', withAuth, async (req, res) => {
             });
 
         const photos = photoData.get({ plain: true });
-console.log(photos)
    
 
         res.render('mainPhoto', {

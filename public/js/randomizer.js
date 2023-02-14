@@ -2,10 +2,8 @@ const warpSpeedHandler = async (event) => {
 
     event.preventDefault();
 
-    console.log("warpSpeedHandler")
 
         const randomId = Math.floor(Math.random() * 30) + 1
-        console.log(randomId);
 
     if (randomId) {
         const response = await fetch(`/planet/${randomId}`, {
