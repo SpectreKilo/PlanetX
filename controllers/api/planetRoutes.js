@@ -5,20 +5,13 @@ const withAuth = require('../../utils/auth')
 //todo Post routes
 //! add create post
 router.post('/', withAuth, async (req, res) => {
-   console.log(req.body)
     try {
       var id = req.session.user_id
         const moon = await BlogPost.create({
             ...req.body,   
             user_id: id,
-            //   topic: req.body.topic,
-            //   content: req.body.content,
-            //   sub_genre_id: req.body.sub_genre_id,
-            //   user_id: 1,
-            //  req.session.user_id,
         });
-        // moon.user_id = req.session.user_id;
-        
+       
         let post = moon.get({plain: true});
 console.log(post)
         res.render('moons',{ post, 
@@ -70,9 +63,4 @@ router.delete("/:id", withAuth, async (req, res) => {
         res.status(500).json({message: "error deleting this blog post", err})
     }
 })
-//todo comments
-//? add create comments
-//? add edit comments
-//? add delete comments
-
 module.exports = router;
