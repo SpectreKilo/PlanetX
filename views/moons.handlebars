@@ -9,9 +9,10 @@
         <div class="card-content white-text">
           <h3><span class="card-title">{{subgenre_name}}</span></h3>
           {{#each topics}}
-          <button type="submit" class="btn {{subgenre_name}}" id="{{id}}" value='{{id}}'>{{topic}}</button>
+          <button type="submit" class="btn {{subgenre_name}}" id="post" value='{{id}}'>{{topic}}</button>
   {{/each}}
         </div>
       </div>
     </div>
   </div>
+ <script src="/js/postBtn.js"></script>

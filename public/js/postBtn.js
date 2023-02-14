@@ -15,8 +15,8 @@ if (response.ok) {
 };
 };
 
-let buttonsArray = document.querySelectorAll(`#${postId}`);
-console.log(buttonsArray)
-for(let i = 0; i < buttonsArray.length; i++){
-    buttonsArray[i].addEventListener('click', postBtn);
+let postArray = document.querySelectorAll('#post');
+console.log(postArray)
+for(let i = 0; i < postArray.length; i++){
+    postArray[i].addEventListener('click', postBtn);
 }
