@@ -3,11 +3,11 @@
       <div class="postForm">
         {{> moonForm}}
       </div>
-      <div class="row ">
+      <div class="row center-align">
     <div class="col s12 m6 ">
       <div class="card purple darken-4">
         <div class="card-content white-text">
-          <h3><span class="card-title">{{subgenre_name}}</span></h3>
+          <h3><span class="card-title center-align">{{subgenre_name}}</span></h3>
           {{#if topics}}
           {{#each topics}}
           <button type="submit" class="btn {{subgenre_name}}" id="post" value='{{id}}'>{{topic}}</button>
