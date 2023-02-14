@@ -117,11 +117,18 @@ router.get('/moon/:id', withAuth, async (req, res) => {
                req.params.id
             }
           });
+          console.log('<===========>')
+          console.log(blogData);
+          if(!blogData[0]){
+           res.render('moons')
+            return;
+          } 
 
   blogPostData = blogData.map((subGenre) => subGenre.get({ plain: true }));
   console.log('<=====>')
   console.log(blogPostData)
   console.log('<=====>')
+  
         res.render('moons', {
             topics: blogPostData,
             loggedIn: req.session.loggedIn,
