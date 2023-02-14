@@ -47,16 +47,23 @@ router.get('/mothership', withAuth, async (req, res) => {
 router.get('/planet/:id', withAuth, async (req, res) => {
     try {
         const subs = await SubGenre.findByPk(req.params.id, {
-            //  include: [
-            //     BlogPost,
-            //  ],
+            //   include: [
+            //     {model: BlogPost,},
+            //   ],
         });
         const planet = subs.get({ plain: true });
-
-
+        
+        const warpPost = await BlogPost.findAll({
+            where: {
+                sub_genre_id: 1
+            }
+        });
+        const warpDisp = warpPost.map((subG) => subG.get({plain: true}));
+        console.log(warpDisp)
         res.render('warpspeed', {
            layout: 'main',
-            ...planet,
+            planet,
+            warpDisp,
             loggedIn: req.session.loggedIn
         });
 
