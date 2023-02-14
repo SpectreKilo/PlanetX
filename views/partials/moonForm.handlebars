@@ -1,14 +1,3 @@
-{{!-- post page displaying all comments for this post and allowing user to comment on post
-
-<section>
-    <header>{{post.topic}}</header>
-    <p class="" id={{post.id}}>{{post.content}}</p>
-</section>
-
-{{> flagForm}}
-
-</section> --}}
-
 <div class="divider"></div>
 <div class="row"></div>
 <div class="row container">
@@ -28,7 +17,7 @@
         <label for="Content">Content</label>
       </div>
     </div>
-      <button class="btn waves-effect waves-light right" type="submit" name="action">Submit</button>
+      <button class="btn waves-effect waves-light right" id="subGenre" value="{{sub_id}}"  type="submit" name="action">Submit</button>
   </form>
 
-{{!-- <script src="/public/js/add-blog-post.js"></script> --}}
+<script src="/js/add-blog-post.js"></script>
