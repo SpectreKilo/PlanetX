@@ -4,6 +4,7 @@ const blogFormHandler = async (event) => {
     const topic = document.querySelector('#topicPost').value.trim();
     const content = document.querySelector('#contentPost').value.trim();
     const sub_genre_id = document.querySelector('#subGenre').value;
+    
     console.log(topic, content, sub_genre_id)
     if (topic && content&&sub_genre_id) {
         const response = await fetch('/api/planets', {

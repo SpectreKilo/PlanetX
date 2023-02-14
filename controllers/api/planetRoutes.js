@@ -7,9 +7,10 @@ const withAuth = require('../../utils/auth')
 router.post('/', withAuth, async (req, res) => {
    console.log(req.body)
     try {
-      
+      var id = req.session.user_id
         const moon = await BlogPost.create({
-               ...req.body,
+            ...req.body,   
+            user_id: id,
             //   topic: req.body.topic,
             //   content: req.body.content,
             //   sub_genre_id: req.body.sub_genre_id,
@@ -19,7 +20,7 @@ router.post('/', withAuth, async (req, res) => {
         // moon.user_id = req.session.user_id;
         
         let post = moon.get({plain: true});
-
+console.log(post)
         res.render('moons',{ post, 
         loggedIn: req.session.loggedIn});
         res.status(200).json(post);
