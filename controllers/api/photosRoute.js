@@ -67,9 +67,9 @@ router.get('/:id', withAuth, async (req, res) => {
 
         const photos = photoData.get({ plain: true });
 console.log(photos)
-        console.log(planet)
+   
 
-        res.render('photoForm', {
+        res.render('mainPhoto', {
            layout: 'main',
             ...photos,
             loggedIn: req.session.loggedIn
