@@ -5,30 +5,26 @@ const withAuth = require('../../utils/auth')
 //todo Post routes
 //! add create post
 router.post('/', withAuth, async (req, res) => {
-    console.log('too many damn logs')
-    console.log(req.body)
-    console.log(BlogPost)
+   
     try {
-        console.log('this is the top of the try')
-        let newPost = await BlogPost.create({
-            ...req.body,
-            //  topic: req.body.topic,
-            //  content: req.body.content,
-            //  sub_genre_id: req.body.sub_genre_id,
-            date_created: Date.now(),
-            user_id: req.session.user_id,
+      
+        const moon = await BlogPost.create({
+               ...req.body,
+            //   topic: req.body.topic,
+            //   content: req.body.content,
+            //   sub_genre_id: req.body.sub_genre_id,
+            //   user_id: 1,
+            //  req.session.user_id,
         });
-       
-        console.log('It broke...................')
-        let post = newPost.get({plain: true});
-        console.log('<=======================>')
-        console.log(post)
-        console.log('<=======================>')
+        // moon.user_id = req.session.user_id;
+        
+        let post = moon.get({plain: true});
+
         res.render('moons',{ post, 
         loggedIn: req.session.loggedIn});
         res.status(200).json(post);
     } catch (err) {
-        console.log('this is route issue')
+       
         res.status(400).json(err);
     }
 });

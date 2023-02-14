@@ -87,25 +87,25 @@ router.get('/photos', withAuth, async (req, res) => {
     });
 
 //get specific subgenre not warp
-router.get('/planets/:id', withAuth, async (req, res) => {
-    try {
-        const subs = await SubGenre.findByPk(req.params.id, {
-            //   include: [
-            //      BlogPost,
-            //   ],
-        });
-        const planet = subs.get({ plain: true });
+// router.get('/planets/:id', withAuth, async (req, res) => {
+//     try {
+//         const subs = await SubGenre.findByPk(req.params.id, {
+//             //   include: [
+//             //      BlogPost,
+//             //   ],
+//         });
+//         const planet = subs.get({ plain: true });
 
-        res.render('moon', {
-           layout: 'main',
-            ...planet,
-            loggedIn: req.session.loggedIn
-        });
+//         res.render('moon', {
+//            layout: 'main',
+//             ...planet,
+//             loggedIn: req.session.loggedIn
+//         });
 
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
 
 // gets post by specific ID
 router.get('/moon/:id', withAuth, async (req, res) => {
@@ -129,7 +129,35 @@ router.get('/moon/:id', withAuth, async (req, res) => {
              
         });
     } catch (err) {
-        console.log("this is route issue")
+        console.log("this is planet route issue")
+        res.status(501).json(err);
+    }
+
+});
+
+// gets post by specific ID
+router.get('/planets/:id', withAuth, async (req, res) => {
+    try {
+      
+        const blogData = await BlogPost.findByPk({
+            where: {
+              id: 
+               req.params.id
+            }
+          });
+
+  blogPostData = blogData.get({ plain: true });
+  console.log('<=====>')
+  console.log(blogPostData)
+  console.log('<=====>')
+        res.render('moons_post', {
+           blogPostData,
+            loggedIn: req.session.loggedIn,
+            // sub_id: blogPostData[0].sub_genre_id
+             
+        });
+    } catch (err) {
+        console.log("this is a moon route issue")
         res.status(500).json(err);
     }
 
