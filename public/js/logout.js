@@ -10,5 +10,5 @@ console.log('hits the logout function <=========>')
     console.log('logout.js fetch is here')
 
 };
-console.log('hits the js file <===>')
+console.log('hits the logout file <===>')
 document.querySelector('#logout').addEventListener('click', logout);

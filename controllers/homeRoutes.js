@@ -129,7 +129,7 @@ router.get('/moon/:id', withAuth, async (req, res) => {
              
         });
     } catch (err) {
-        console.log("this is planet route issue")
+        console.log("this is moon route issue")
         res.status(501).json(err);
     }
 
@@ -137,27 +137,28 @@ router.get('/moon/:id', withAuth, async (req, res) => {
 
 // gets post by specific ID
 router.get('/planets/:id', withAuth, async (req, res) => {
+    console.log(req.body);
     try {
       
-        const blogData = await BlogPost.findByPk({
-            where: {
-              id: 
-               req.params.id
-            }
+        const blogData = await BlogPost.findByPk(req.params.id, {
+            // where: {
+            //   id: 
+            //    req.params.id
+            // }
           });
-
+console.log(blogData)
   blogPostData = blogData.get({ plain: true });
   console.log('<=====>')
   console.log(blogPostData)
   console.log('<=====>')
-        res.render('moons_post', {
+        res.render('moon_post', {
            blogPostData,
             loggedIn: req.session.loggedIn,
             // sub_id: blogPostData[0].sub_genre_id
              
         });
     } catch (err) {
-        console.log("this is a moon route issue")
+        console.log("this is a planet route issue")
         res.status(500).json(err);
     }
 
