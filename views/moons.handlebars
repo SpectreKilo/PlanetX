@@ -8,9 +8,11 @@
       <div class="card purple darken-4">
         <div class="card-content white-text">
           <h3><span class="card-title">{{subgenre_name}}</span></h3>
+          {{#if topics}}
           {{#each topics}}
           <button type="submit" class="btn {{subgenre_name}}" id="post" value='{{id}}'>{{topic}}</button>
   {{/each}}
+  {{/if}}
         </div>
       </div>
     </div>
