@@ -48,6 +48,7 @@ User.init(
             },
         },
         sequelize,
+        // initialAutoIncrement: 100,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
