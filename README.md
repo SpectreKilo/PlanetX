@@ -26,10 +26,19 @@ Space themed blog website that allows users to discuss topics with each other. U
 
 [Link to deployed website!](https://planetxapp-jbe.herokuapp.com/)
 
+![homepage](./public/image/homepage.png)
+
+## Usage
+You can create a new account by using the sign up form or login to a seeded account by entering test@test.com with a password of pass1. This will allow you to access all the features on our website. You can save photos, create posts and view other posts from other users.
+
 ## Learning Points 
-1. How to create multilevel relationships between models.
-2. How to pass information between routes.
-3. How to implement cloudinary and get it functioning.
+1. How to create multilevel relationships between models:
+    We used through/join tables to link many to many relationships between users, subgenres and blog posts. This allowed us to pass information to our routes to get specific posts and specific sub genres.
+2. How to pass information between routes:
+    Using our relationships we can pass information to our routes that manipulates our database. We can target user ids, genre ids and sub genre ids from other models because of our relationships we have established.
+3. How to implement cloudinary and get it functioning:
+    Cloudinary allows you to use their cloud storage to store photos and in turn gives you a URL to save to our database so it can be called on easily. They also supply a widget to upload photos from your pc, Facebook, Instagram and many other places.
+![cloudinary widget](./public/image/widget.png)
 
 ## Author Info
 
