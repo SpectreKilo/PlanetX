@@ -3,7 +3,7 @@ const { Photos } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //todo Post routes
-//! add create post
+//! add create photo
 router.post('/', withAuth, async (req, res) => {
     try {
         const uploadPhoto = await Photos.create({

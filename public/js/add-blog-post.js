@@ -14,6 +14,7 @@ const blogFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace(`/moon/${sub_genre_id}`);
         } else {
+            
             alert(response.statusText);
         }
     }

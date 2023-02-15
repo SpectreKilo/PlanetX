@@ -1,6 +1,10 @@
 # PlanetX
+![badmath](https://img.shields.io/badge/license-MIT-blue)
+![badmath](https://img.shields.io/badge/Built%20With-JavaScript-ff69b4)
+![badmath](https://img.shields.io/badge/Built%20With-Handlebars-blueviolet)
 
-## | Git | JavaScript | MySQL | MySQL2 | Sequelize | dotenv | express-handlebars | express-session | connect-session-sequelize | bcrypt | Cloudinary | Materialize |
+
+## Technology Used
 
 | Technology Used         | Resource URL           | 
 | ------------- |:-------------:|  
