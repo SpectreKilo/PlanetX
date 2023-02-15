@@ -18,9 +18,18 @@ Comment.belongsTo(User, {
     foreignKey: "user_id"
 })
 
-User.belongsToMany(SubGenre, { through: BlogPost, onDelete: 'SET NULL' });
+// old User.belongsToMany(SubGenre, { through: BlogPost, onDelete: 'SET NULL' });
 
-SubGenre.belongsToMany(User, { through: BlogPost, onDelete: 'SET NULL' });
+// old SubGenre.belongsToMany(User, { through: BlogPost, onDelete: 'SET NULL' });
+User.belongsToMany(SubGenre, { through: {
+    model: BlogPost,
+    unique: false,
+  }, onDelete: 'SET NULL' });
+
+SubGenre.belongsToMany(User, { through: {
+    model: BlogPost,
+    unique: false,
+   }, onDelete: 'SET NULL' });
 
 Genre.hasMany(SubGenre, {
     foreignKey: "genre_id",
